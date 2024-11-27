@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['400', '700'], // Choose the font weights you need
+  display: 'swap',        // Use 'swap' for better performance
+});
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ['400', '700'],
   display: "swap",
 });
 
@@ -20,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.className} ${notoSansJP.className} antialiased`}>{children}</body>
     </html>
   );
 }
