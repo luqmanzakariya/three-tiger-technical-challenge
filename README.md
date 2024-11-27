@@ -16,8 +16,31 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
 ## Deploy on Vercel
 
 You can check the deployed version here: [threetiger.luqmanzakariya.com](https://threetiger.luqmanzakariya.com)
+
+## Information
+
+**Total time spent from starting to completing the task**
+\
+The task took approximately 6 hours from start to finish.
+
+**Your overall programming experience**
+\
+I have 5 years of experience in programming, working across various technologies including frontend, backend, and full-stack development.
+
+**Your experience with web frontend programming**
+\
+I have extensive experience in web frontend development, particularly using frameworks and libraries like React, Next.js, Angular, and tools like Tailwind CSS and GSAP for animations.
+
+**If you used AI like ChatGPT and had any success, a brief report**
+\
+Yes, I used ChatGPT to assist with generating ideas for unit test. It was helpful in providing quick solutions and saving time during the task.
+
+**Pages, books, or repositories you referenced when starting the task**
+\
+I referred to the official documentation for Next.js, community forums like Stack Overflow, and relevant GitHub repositories for examples and best practices.
+
+## Unit Test Result
+https://ibb.co.com/WvSFYBL
