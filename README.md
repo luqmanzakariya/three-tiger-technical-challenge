@@ -2,16 +2,16 @@ This is Three Tiger Technical Challenge 202411. This is a To-Do app for Assignme
 
 ## Getting Started
 
-First, run the development server:
+Install the dependencies:
+
+```bash
+npm install --legacy-peer-deps
+```
+
+Then run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
