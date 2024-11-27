@@ -2,9 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  :root {
+    --font-inter: "Inter", sans-serif;
+    --background: #ffffff;
+    --foreground: #171717;
+    --blue-nav: #281e9b;
+  }
+
+  h1 {
+    @apply text-white text-[24px] lg:text-[36px] leading-[29.05px] lg:leading-[43.57px] font-[700];
+  }
+}
+
+@layer components {
+  .navbar {
+    @apply bg-blueNav py-[18px] lg:py-[14.5] px-5 rounded-ss-[20px] rounded-se-[20px] shadow-custom-drop;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,10 +26,4 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }

@@ -4,8 +4,8 @@ import { render, screen } from "@testing-library/react";
 describe("Home Route", () => {
   render(<Home />);
 
-  it("render title to do", () => {
-    const text = screen.getByText(/Todo/i);
+  it("renders heading on navbar component", () => {
+    const text = screen.getByText(/To Do/i);
     expect(text).toBeInTheDocument();
   });
 });
