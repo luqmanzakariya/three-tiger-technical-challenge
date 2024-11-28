@@ -1,14 +1,21 @@
 This is Three Tiger Technical Challenge 202411. This is a To-Do app for Assignment 2 made with [Next.js](https://nextjs.org) bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Assignment 1
 
-Install the dependencies:
+1. Go to folder assignment-1
+2. Open Three Tiger - Assignment 1.pdf for the answer
+
+## Assignment 2
+
+1. Go to folder assignment-2
+
+2. Install the dependencies:
 
 ```bash
 npm install --legacy-peer-deps
 ```
 
-Then run the development server:
+3. Then run the development server:
 
 ```bash
 npm run dev
@@ -20,7 +27,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can check the deployed version here: [threetiger.luqmanzakariya.com](https://threetiger.luqmanzakariya.com)
 
-## Information
+## Assignment 2 Information
 
 **Total time spent from starting to completing the task**
 \
@@ -42,5 +49,5 @@ Yes, I used ChatGPT to assist with generating ideas for unit test. It was helpfu
 \
 I referred to the official documentation for Next.js, community forums like Stack Overflow, and relevant GitHub repositories for examples and best practices.
 
-## Unit Test Result
+## Assignment 2 - Unit Test Result
 https://ibb.co.com/WvSFYBL
