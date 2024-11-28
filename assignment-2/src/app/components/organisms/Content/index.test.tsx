@@ -3,9 +3,16 @@ import "@testing-library/jest-dom";
 import Content from "@/app/components/organisms/Content";
 
 describe("Content Component", () => {
+  beforeEach(() => {
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(mockTodos),
+      })
+    ) as jest.Mock;
+  });
+
   afterEach(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const originalFetch = global.fetch;
+    jest.clearAllMocks();
   });
 
   const mockTodos = [
@@ -32,14 +39,6 @@ describe("Content Component", () => {
     },
   ];
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  global.fetch = jest.fn(() =>
-    Promise.resolve({
-      json: () => Promise.resolve(mockTodos),
-    })
-  );
-
   it("renders FilterMolecules and Card components", async () => {
     render(<Content />);
 
@@ -64,7 +63,7 @@ describe("Content Component", () => {
       expect(screen.getByText("Buy groceries")).toBeInTheDocument();
     });
 
-    // Click on the "personal" filter
+    // Mock FilterMolecules with test IDs
     const personalFilter = screen.getByTestId("personal");
     fireEvent.click(personalFilter);
 
@@ -93,7 +92,26 @@ describe("Content Component", () => {
     // Check that all tasks are displayed
     await waitFor(() => {
       const cards = screen.getAllByTestId("todo");
-      expect(cards).toHaveLength(3); // Matches the mocked data length
+      expect(cards).toHaveLength(mockTodos.length); // Matches the mocked data length
+    });
+  });
+
+  it("updates the completition status of a task and sorts the list", async () => {
+    render(<Content />);
+
+    // Wait for API data to load
+    await waitFor(() => {
+      expect(screen.getByText("Send email to client")).toBeInTheDocument();
+    });
+
+    // Click on the checkbox
+    const checkbox = screen.getByTestId("Finish Firebase API");
+    fireEvent.click(checkbox);
+
+    // // Check that all tasks are displayed
+    await waitFor(() => {
+      const cards = screen.getAllByTestId("todo");
+      expect(cards).toHaveLength(mockTodos.length); // Matches the mocked data length
     });
   });
 });
