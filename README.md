@@ -50,4 +50,4 @@ Yes, I used ChatGPT to assist with generating ideas for unit test. It was helpfu
 I referred to the official documentation for Next.js, community forums like Stack Overflow, and relevant GitHub repositories for examples and best practices.
 
 ## Assignment 2 - Unit Test Result
-https://prnt.sc/9wZOd7_Hghmb
+https://prnt.sc/zk3HotD91Hjl
