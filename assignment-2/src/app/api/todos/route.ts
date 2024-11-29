@@ -1,10 +1,10 @@
-import getDataTodos from "../../service";
+import getDataTodos from '../../service';
 
 export async function GET() {
   try {
-    const data = await getDataTodos()
+    const data = await getDataTodos();
     return Response.json(data);
   } catch (error) {
-    console.log("errror", error);
+    console.log('errror', error);
   }
 }

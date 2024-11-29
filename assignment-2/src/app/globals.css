@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --font-inter: "Inter", sans-serif;
+    --font-inter: 'Inter', sans-serif;
     --background: #ffffff;
     --foreground: #171717;
     --blue-nav: #281e9b;
@@ -19,33 +19,33 @@
   }
 
   body {
-    @apply bg-black min-h-screen flex flex-col;
+    @apply flex min-h-screen flex-col bg-black;
   }
 
   h1 {
-    @apply text-white text-[24px] lg:text-[36px] leading-[29.05px] lg:leading-[43.57px] font-[700];
+    @apply text-[24px] font-[700] leading-[29.05px] text-white lg:text-[36px] lg:leading-[43.57px];
   }
 
   .card-description {
-    @apply text-[12px] leading-[14.52px] text-cardDescription font-[400];
+    @apply text-[12px] font-[400] leading-[14.52px] text-cardDescription;
   }
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .japanese {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 @layer components {
   .navbar {
-    @apply relative z-10 bg-blueNav py-[18px] lg:py-[14.5] px-5 rounded-ss-[30px] lg:rounded-ss-[35px] rounded-se-[30px] lg:rounded-se-[35px] shadow-custom-drop;
+    @apply relative z-10 rounded-se-[30px] rounded-ss-[30px] bg-blueNav px-5 py-[18px] shadow-custom-drop lg:rounded-se-[35px] lg:rounded-ss-[35px] lg:py-[14.5];
   }
 
   .content {
-    @apply h-full px-6 py-9 lg:py-[46px] lg:px-0 bg-content flex-1 rounded-bl-[30px] lg:rounded-bl-[35px] rounded-br-[30px] lg:rounded-br-[35px];
+    @apply h-full flex-1 rounded-bl-[30px] rounded-br-[30px] bg-content px-6 py-9 lg:rounded-bl-[35px] lg:rounded-br-[35px] lg:px-0 lg:py-[46px];
   }
 
   .filter-wrapper {
@@ -53,11 +53,11 @@ body {
   }
 
   .filter-title {
-    @apply text-label text-[12px] leading-[14.52px] font-[700];
+    @apply text-[12px] font-[700] leading-[14.52px] text-label;
   }
 
   .chip {
-    @apply bg-chipBg uppercase text-chipText text-[12px] leading-[14.52px] font-[700] px-[15px] py-[5px] rounded-[100px];
+    @apply rounded-[100px] bg-chipBg px-[15px] py-[5px] text-[12px] font-[700] uppercase leading-[14.52px] text-chipText;
   }
 
   .chip-active {
@@ -65,19 +65,19 @@ body {
   }
 
   .content-list {
-    @apply flex flex-col gap-[10px] mt-[10px];
+    @apply mt-[10px] flex flex-col gap-[10px];
   }
 
   .card {
-    @apply bg-white p-[10px] pr-[20px] flex justify-between items-center;
+    @apply flex items-center justify-between bg-white p-[10px] pr-[20px];
   }
 
   .card-title {
-    @apply text-cardDescription text-[18px] leading-[26.06px] font-[700];
+    @apply text-[18px] font-[700] leading-[26.06px] text-cardDescription;
   }
 
   .card-time {
-    @apply text-cardTime text-[12px] leading-[14.52px] font-[400];
+    @apply text-[12px] font-[400] leading-[14.52px] text-cardTime;
   }
 }
 

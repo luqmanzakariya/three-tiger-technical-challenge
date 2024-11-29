@@ -8,7 +8,7 @@ const Chip = ({ name, active, onClick }: ChipProps) => {
   return (
     <button
       data-testid={name}
-      className={`chip ${active === name ? "chip-active" : ""}`}
+      className={`chip ${active === name ? 'chip-active' : ''}`}
       onClick={() => onClick(name)}
     >
       {name}

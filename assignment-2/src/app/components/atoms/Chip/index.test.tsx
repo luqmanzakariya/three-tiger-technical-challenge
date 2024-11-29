@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom';
-import { render, screen, fireEvent } from "@testing-library/react";
-import Chip from "@/app/components/atoms/Chip";
+import { render, screen, fireEvent } from '@testing-library/react';
+import Chip from '@/app/components/atoms/Chip';
 
-describe("Chip Component", () => {
+describe('Chip Component', () => {
   const mockOnClick = jest.fn();
-  
+
   const defaultProps = {
     name: 'Test',
     active: 'Test',
@@ -25,7 +25,7 @@ describe("Chip Component", () => {
   });
 
   it('does not apply the "chip-active" class when active prop does not match the name', () => {
-    render(<Chip {...defaultProps} active="Inactive" />);
+    render(<Chip {...defaultProps} active='Inactive' />);
     const button = screen.getByRole('button');
     expect(button).not.toHaveClass('chip-active');
   });

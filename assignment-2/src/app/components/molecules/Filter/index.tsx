@@ -1,4 +1,4 @@
-import Chip from "../../atoms/Chip";
+import Chip from '../../atoms/Chip';
 
 interface FilterMoleculesProps {
   filter: string;
@@ -8,15 +8,15 @@ interface FilterMoleculesProps {
 const filterList = [
   {
     id: 0,
-    name: "all",
+    name: 'all',
   },
   {
     id: 1,
-    name: "personal",
+    name: 'personal',
   },
   {
     id: 2,
-    name: "work",
+    name: 'work',
   },
 ];
 
@@ -25,10 +25,10 @@ const FilterMolecules = ({ filter, setFilter }: FilterMoleculesProps) => {
     setFilter(value);
   };
   return (
-    <div className="filter-wrapper">
-      <div className="filter-title">Filter:</div>
-      <div className="pl-[10px] flex align-center gap-[10px]">
-        {filterList.map(({ id, name }:{id: number, name: string} ) => (
+    <div className='filter-wrapper'>
+      <div className='filter-title'>Filter:</div>
+      <div className='align-center flex gap-[10px] pl-[10px]'>
+        {filterList.map(({ id, name }: { id: number; name: string }) => (
           <Chip key={id} name={name} active={filter} onClick={handleFilter} />
         ))}
       </div>

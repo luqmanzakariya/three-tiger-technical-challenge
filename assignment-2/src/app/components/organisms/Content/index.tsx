@@ -1,7 +1,7 @@
-"use client";
-import { useState, useEffect } from "react";
-import FilterMolecules from "../../molecules/Filter";
-import Card from "../../molecules/Card";
+'use client';
+import { useState, useEffect } from 'react';
+import FilterMolecules from '../../molecules/Filter';
+import Card from '../../molecules/Card';
 
 interface ItemProps {
   id: number;
@@ -14,10 +14,10 @@ interface ItemProps {
 const Content = () => {
   const [todos, setTodo] = useState<ItemProps[]>([]);
   const [filteredTodo, setFilteredTodo] = useState<ItemProps[]>([]);
-  const [filter, setFilter] = useState<string>("all");
+  const [filter, setFilter] = useState<string>('all');
 
   useEffect(() => {
-    if (filter !== "all") {
+    if (filter !== 'all') {
       const filteredData = todos.filter((val) => val.category.includes(filter));
       setFilteredTodo(filteredData);
     } else {
@@ -26,14 +26,17 @@ const Content = () => {
   }, [filter, todos]);
 
   useEffect(() => {
-    fetch("/api/todos")
+    fetch('/api/todos')
       .then((response) => response.json())
       .then((data) => {
-        const sortedData = data.sort((a: ItemProps,b:ItemProps) => {
-          return new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf();
+        const sortedData = data.sort((a: ItemProps, b: ItemProps) => {
+          return (
+            new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf()
+          );
         });
         const finishedData = sortedData.sort(
-          (a: ItemProps, b:ItemProps) => Number(a.completed) - Number(b.completed)
+          (a: ItemProps, b: ItemProps) =>
+            Number(a.completed) - Number(b.completed)
         );
         setTodo(finishedData);
         setFilteredTodo(finishedData);
@@ -44,21 +47,21 @@ const Content = () => {
     const updateData = todos.map((val) =>
       val.id === id ? { ...val, completed: value } : val
     );
-    const sortedData = updateData.sort((a: ItemProps,b:ItemProps) => {
+    const sortedData = updateData.sort((a: ItemProps, b: ItemProps) => {
       return new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf();
     });
     const finishedData = sortedData.sort(
-      (a: ItemProps, b:ItemProps) => Number(a.completed) - Number(b.completed)
+      (a: ItemProps, b: ItemProps) => Number(a.completed) - Number(b.completed)
     );
     setTodo(finishedData);
     setFilteredTodo(finishedData);
   };
 
   return (
-    <div className="content">
-      <div className="max-w-[538px] m-auto">
+    <div className='content'>
+      <div className='m-auto max-w-[538px]'>
         <FilterMolecules filter={filter} setFilter={setFilter} />
-        <div className="content-list">
+        <div className='content-list'>
           {filteredTodo?.length > 0 &&
             filteredTodo.map(({ id, task, category, createdAt, completed }) => (
               <Card

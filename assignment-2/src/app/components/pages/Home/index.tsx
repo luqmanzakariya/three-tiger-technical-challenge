@@ -1,5 +1,5 @@
-import Navbar from "@/app/components/organisms/Navbar";
-import Content from "@/app/components/organisms/Content";
+import Navbar from '@/app/components/organisms/Navbar';
+import Content from '@/app/components/organisms/Content';
 
 const HomePage = () => {
   return (
