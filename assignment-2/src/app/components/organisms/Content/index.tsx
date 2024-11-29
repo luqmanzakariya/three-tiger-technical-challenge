@@ -29,8 +29,14 @@ const Content = () => {
     fetch("/api/todos")
       .then((response) => response.json())
       .then((data) => {
-        setTodo(data);
-        setFilteredTodo(data);
+        const sortedData = data.sort((a: ItemProps,b:ItemProps) => {
+          return new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf();
+        });
+        const finishedData = sortedData.sort(
+          (a: ItemProps, b:ItemProps) => Number(a.completed) - Number(b.completed)
+        );
+        setTodo(finishedData);
+        setFilteredTodo(finishedData);
       });
   }, []);
 
@@ -38,11 +44,14 @@ const Content = () => {
     const updateData = todos.map((val) =>
       val.id === id ? { ...val, completed: value } : val
     );
-    const sortedData = updateData.sort(
-      (a, b) => Number(a.completed) - Number(b.completed)
+    const sortedData = updateData.sort((a: ItemProps,b:ItemProps) => {
+      return new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf();
+    });
+    const finishedData = sortedData.sort(
+      (a: ItemProps, b:ItemProps) => Number(a.completed) - Number(b.completed)
     );
-    setTodo(sortedData);
-    setFilteredTodo(sortedData);
+    setTodo(finishedData);
+    setFilteredTodo(finishedData);
   };
 
   return (
